@@ -8,6 +8,10 @@ import requests
 main = Flask(__name__)
 CORS(main)
 
+@main.route('/test',methods=['GET'])
+def test():
+    return jsonify({"message":"Test executed succssfully!"}),200
+
 @main.route('/macadd',methods=['POST'])
 def macadd():
     data = request.json
